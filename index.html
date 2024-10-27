@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShekzTech Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .top-bar {
+            background-color: #333; /* Dark background */
+            color: #fff;
+            padding: 0.5rem 0;
+        }
+        .top-bar a {
+            color: #fff;
+            margin-left: 1rem;
+        }
+        .badge-custom {
+            background-color: #e6ccff; /* Light purple background */
+            color: #6f42c1; /* Darker purple text */
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .section-background {
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 4rem 0;
+        }
+        .image-container {
+            position: relative;
+        }
+        .image-overlay {
+            position: absolute;
+            background-color: #6f42c1; /* Purple overlay color */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+          /* Custom styles for section 2*/
+          .feature-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 0.5rem;
+        }
+        .feature-card i {
+            font-size: 2rem;
+            color: #6f42c1;
+            margin-bottom: 0.5rem;
+        }
+        .badge-custom {
+            background-color: #e6ccff; /* Light purple background */
+            color: #6f42c1; /* Darker purple text */
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        /* Custom styles */
+        .section-background {
+            background-color: #f8f9fa; /* Light background */
+            padding: 3rem 0;
+        }
+        .badge-custom {
+            background-color: #e6ccff; /* Light purple background */
+            color: #6f42c1; /* Darker purple text */
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .course-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .course-icon {
+            background-color: #e6ccff; /* Light purple background */
+            color: #6f42c1; /* Darker purple text */
+            font-size: 1.2rem;
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+          /* Course list */
+          .section-background {
+            background-color: #f8f9fa; /* Light background */
+            padding: 3rem 0;
+        }
+        .badge-custom {
+            background-color: #6f42c1; /* Purple background */
+            color: #ffffff;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .course-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .card-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .card-content {
+            padding: 1rem;
+        }
+        .author-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+         /* Custom styles */
+         .footer-background {
+            background-color: #0b0d1a;
+            color: #cfcfcf;
+            padding: 3rem 0;
+        }
+        .footer-background a {
+            color: #cfcfcf;
+            text-decoration: none;
+        }
+        .footer-background a:hover {
+            color: #ffffff;
+        }
+        .social-icons a {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: #cfcfcf;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ffffff;
+        }
+        .footer-heading {
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .footer-line {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 2rem 0;
+        }
+        .subscribe-input {
+            background-color: #1c1f2e;
+            border: none;
+            color: #cfcfcf;
+        }
+        .subscribe-input:focus {
+            box-shadow: none;
+            background-color: #1c1f2e;
+        }
+        .subscribe-btn {
+            background-color: #4c5eff;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+        }
+        .subscribe-btn:hover {
+            background-color: #3749e8;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <span>Call Us: +92-333-7276335 - Mail Us: info@shekztech.com</span>
+        </div>
+        <div>
+            <span><i class="bi bi-geo-alt"></i> Plot 1177, Sector 31B - Crossing, Karachi, Sindh</span>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/logo_1-9be7c522.png" alt="ShekzTech Logo" width="" height=""> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tools
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Tool 1</a></li>
+                        <li><a class="dropdown-item" href="#">Tool 2</a></li>
+                        <li><a class="dropdown-item" href="#">Tool 3</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <a href="#" class="btn btn-outline-dark me-2">Login</a>
+                <a href="#" class="btn btn-primary">Get Started Free</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Section Below Navbar -->
+<section class="section-background">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-md-6">
+                <span class="badge badge-custom">Education</span>
+                <h1 class="display-4 mt-3">Web-based LMS, loved by more than 1000 learners</h1>
+                <p class="lead text-muted mt-3">
+                    Shekz Tech offers some of the best courses available anywhere online for creating websites. Learn at your own speed and master PHP, Laravel, and CodeIgniter4. Start learning how to code websites right now!
+                </p>
+            </div>
+            <!-- Image Content -->
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="image-container">
+                    <div class="image-overlay" style="height: 400px; width: 400px;"></div>
+                    <img src="assets/education-471e31de.webp" alt="Student 1" class="img-fluid position-absolute" style="top: 50px; right: 50px; width: 150px; z-index: 1; border-radius: 8px;">
+                    <img src="student2.png" alt="Student 2" class="img-fluid position-absolute" style="bottom: 20px; left: 50px; width: 100px; z-index: 2; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-play-circle"></i>
+                    <h5 class="mt-2">Digital Learning</h5>
+                    <p class="text-muted">Digital courses provide limitless learning opportunities.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-person-circle"></i>
+                    <h5 class="mt-2">Skilled Educators</h5>
+                    <p class="text-muted">Diverse courses taught by experts.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-journal-text"></i>
+                    <h5 class="mt-2">Broad Curriculum</h5>
+                    <p class="text-muted">An in-depth curriculum featuring a wide variety of subject matter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="py-5 section-background">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="assets/about_1-b6061ff2.webp" alt="Main Student" class="img-fluid" style="border-radius: 8px;">
+            </div>
+            <div class="col-md-6">
+                <span class="badge badge-custom">About Us</span>
+                <h2 class="mt-3">Welcome to the WebDev Mastery Hub</h2>
+                <p class="lead text-muted">Connecting novice developers with seasoned experts.</p>
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-center mb-2">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Connecting potential web developers with experts in the industry.
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Courses utilize the potential of innovative frameworks.
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Our mentors have more than ten years of experience.
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Transforming the learning of knowledge into expertise mastery.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Categories Section -->
+<section class="section-background">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <span class="badge badge-custom">Course List</span>
+                <h2 class="mt-3">Navigating Major Categories</h2>
+                <p class="text-muted">Discover in-demand course offerings within the dynamic field of technology.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">AWS</div>
+                    <h5 class="mt-2">AWS</h5>
+                    <p class="text-muted mb-0">Course: 1</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">CMS</div>
+                    <h5 class="mt-2">CMS</h5>
+                    <p class="text-muted mb-0">Courses: 3</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">Database</div>
+                    <h5 class="mt-2">Database</h5>
+                    <p class="text-muted mb-0">Course: 1</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">Framework</div>
+                    <h5 class="mt-2">Framework</h5>
+                    <p class="text-muted mb-0">Courses: 10</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">Hosting</div>
+                    <h5 class="mt-2">Hosting</h5>
+                    <p class="text-muted mb-0">Course: 1</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">Languages</div>
+                    <h5 class="mt-2">Languages</h5>
+                    <p class="text-muted mb-0">Courses: 3</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">Web</div>
+                    <h5 class="mt-2">Web Designing</h5>
+                    <p class="text-muted mb-0">Courses: 4</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course-card">
+                    <div class="course-icon">CS</div>
+                    <h5 class="mt-2">Computer Science</h5>
+                    <p class="text-muted mb-0">Course: 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Cards Section -->
+<section class="section-background">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Ideal <span class="text-primary">Online Learning</span><br>For your Career Advancement</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="card-image">
+                        <img src="assets/course 1.webp" alt="Course 1" class="img-fluid">
+                        <span class="badge badge-custom">Framework</span>
+                        <span class="position-absolute top-0 end-0 p-2"><i class="bi bi-heart-fill"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-journal-text me-2"></i> 9 Lessons
+                            <i class="bi bi-clock ms-3 me-2"></i> 1 hour, 29 minutes
+                        </div>
+                        <h5>Laravel 10 Tutorial in Hindi/Urdu Language with Projects</h5>
+                        <p class="text-primary fw-bold">Free</p>
+                        <div class="d-flex align-items-center author-info mt-3">
+                            <img src="assets/author.jpg" alt="Author 1">
+                            <span class="ms-2">Shehzad Ahmed</span>
+                            <span class="ms-auto"><i class="bi bi-star-fill text-warning"></i> (0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="card-image">
+                        <img src="assets/laravel.webp" alt="Course 2" class="img-fluid">
+                        <span class="badge badge-custom">Framework</span>
+                        <span class="position-absolute top-0 end-0 p-2"><i class="bi bi-heart-fill"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-journal-text me-2"></i> 13 Lessons
+                            <i class="bi bi-clock ms-3 me-2"></i> 2 hours, 18 minutes
+                        </div>
+                        <h5>Laravel 9 Courses in Hindi/Urdu with Projects</h5>
+                        <p class="text-primary fw-bold">Free</p>
+                        <div class="d-flex align-items-center author-info mt-3">
+                            <img src="assets/author.jpg" alt="Author 1">
+                            <span class="ms-2">Shehzad Ahmed</span>
+                            <span class="ms-auto"><i class="bi bi-star-fill text-warning"></i> (0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="card-image">
+                        <img src="assets/laravel 10.webp" alt="Course 3" class="img-fluid">
+                        <span class="badge badge-custom">Framework</span>
+                        <span class="position-absolute top-0 end-0 p-2"><i class="bi bi-heart-fill"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-journal-text me-2"></i> 12 Lessons
+                            <i class="bi bi-clock ms-3 me-2"></i> 2 hours, 21 minutes
+                        </div>
+                        <h5>Mastering Laravel 10 Course: Building Modern Web Applications</h5>
+                        <p class="text-primary fw-bold">Free</p>
+                        <div class="d-flex align-items-center author-info mt-3">
+                            <img src="assets/author.jpg" alt="Author 1">
+                            <span class="ms-2">Shehzad Ahmed</span>
+                            <span class="ms-auto"><i class="bi bi-star-fill text-warning"></i> (0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-background">
+    <div class="container">
+        <!-- Subscription Row -->
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto text-center">
+                <input type="email" class="form-control subscribe-input d-inline-block w-50" placeholder="Enter your email here">
+                <button class="btn subscribe-btn">SUBSCRIBE NOW</button>
+            </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="footer-line"></div>
+
+        <!-- Footer Content -->
+        <div class="row">
+            <!-- About Us -->
+            <div class="col-md-3">
+                <h5 class="footer-heading">About us</h5>
+                <p>Shekz Tech - Globally recognized for superior web development and design tutorials, empowering the tech leaders of tomorrow.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <!-- Web Development Courses -->
+            <div class="col-md-3">
+                <h5 class="footer-heading">Web Development Courses</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Free Laravel 10 Course</a></li>
+                    <li><a href="#">Free Laravel 9 Course in Hindi/Urdu</a></li>
+                    <li><a href="#">Free Codeigniter 4 Course</a></li>
+                    <li><a href="#">Free Crud operation in Codeigniter 4</a></li>
+                    <li><a href="#">Complete Codeigniter 4 Series</a></li>
+                </ul>
+            </div>
+            <!-- Tools -->
+            <div class="col-md-3">
+                <h5 class="footer-heading">Tools</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Free JPG, PNG to WebP Converter</a></li>
+                    <li><a href="#">Free Online Image Compression for WebP, PNG, and JPG</a></li>
+                </ul>
+            </div>
+            <!-- Popular Blogs -->
+            <div class="col-md-3">
+                <h5 class="footer-heading">POPULAR BLOGS</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Traditional bus VS High speed bus architecture</a></li>
+                    <li><a href="#">HP Victus 15 budget gaming laptop</a></li>
+                    <li><a href="#">How to convert USDT to Tron(TRX) on binance</a></li>
+                    <li><a href="#">Pagination in Codeigniter 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
